@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Liste des produits</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Num de produit</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Date de création</th>
+      <th>Catégorie</th>
+      <th scope="col" class="text-center">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let prod of products">
+      <th scope="row">{{prod.productId}}</th>
+      <td>{{prod.productName}}</td>
+      <td>{{prod.productPrice}}</td>
+      <td>{{prod.createDate | date: "dd/MM/yyyy"}}</td>
+      <td>{{prod.category?.categoryName}}</td>
+      <td class="text-center">
+        <button class="btn btn-success me-2" [routerLink]="['/produits/updateProduct',prod.productId]">Modifier</button>
+        <button class="btn btn-danger" (click)="deleteProduct(prod)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

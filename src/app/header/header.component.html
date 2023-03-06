@@ -1,0 +1,44 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg bg-body-tertiary">
+  <a class="navbar-brand" href="#">Gestion Produits</a>
+  <div class="container-fluid">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <button routerLink="/" class="btn btn-outline-light">Home</button>
+    </li>
+    <!-- Dropdown -->
+  </ul>
+
+    <div class="btn-group me-3">
+      <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-outline-light" routerLink="produits" ngbDropdownToggle>Produits</button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+          <button routerLink="produits/add" ngbDropdownItem>Ajouter</button>
+          <button routerLink="produits/list" ngbDropdownItem>Lister</button>
+        </div>
+      </div>
+      <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-outline-light" ngbDropdownToggle>Categories</button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+          <button ngbDropdownItem>Ajouter</button>
+          <button ngbDropdownItem>Lister</button>
+        </div>
+      </div>
+    </div>
+
+  <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-light" type="submit">Search</button>
+  </form>
+  </div>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-light" id="dropdownBasic2" ngbDropdownToggle>
+      [Username]
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+      <button ngbDropdownItem>Login</button>
+      <button ngbDropdownItem>logout</button>
+      <button ngbDropdownItem>Profile</button>
+    </div>
+  </div>
+</nav>
